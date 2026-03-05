@@ -5,39 +5,49 @@ function App() {
   return (
     <div className="app-container">
       {/* Header Section */}
-      <header className="header">
-        <h1>KonceptsbyKap</h1>
-        <p>UCSC Graduation Photography</p>
-        <nav className="nav-links">
-          <a href="#portfolio">Portfolio</a>
-          <a href="#rates">Rates</a>
-          <a href="#booking">Book a Shoot</a>
-        </nav>
+      <header className="header theme-header">
+        <div className="header-content">
+          <h1>KonceptsbyKap</h1>
+          <p className="subtitle">UCSC Graduation Photography</p>
+          <nav className="nav-links">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#rates">Rates</a>
+            <a href="#booking">Book a Shoot</a>
+          </nav>
+        </div>
       </header>
 
       {/* Portfolio Section */}
       <section id="portfolio" className="section">
         <h2>Portfolio</h2>
-        <div className="gallery-grid">
-          {/* Replace src with your actual image paths */}
-          <img src="(1).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(2).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(3).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(4).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(5).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(6).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(7).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(8).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(9).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(10).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(11).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(12).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="(13).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+        <div className="portfolio-wrapper">
+          
+          {/* Top Landscape Photo */}
+          <div className="landscape-container">
+            <img src="(1).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
+          </div>
+
+          {/* 3x4 Portrait Grid */}
+          <div className="portrait-grid">
+            <img src="(2).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(3).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(4).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(5).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(6).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(7).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(8).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(9).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(10).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(11).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(12).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(13).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+          </div>
+
         </div>
       </section>
 
       {/* Rates Section */}
-      <section id="rates" className="section bg-light">
+      <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
         <div className="rates-container">
           
