@@ -20,10 +20,19 @@ function App() {
         <h2>Portfolio</h2>
         <div className="gallery-grid">
           {/* Replace src with your actual image paths */}
-          <img src="/images/grad1.jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
-          <img src="/images/grad2.jpg" alt="Campus graduation shot" className="gallery-img" />
-          <img src="/images/grad3.jpg" alt="Solo graduation portrait" className="gallery-img" />
-          <img src="/images/grad4.jpg" alt="Group graduation photo" className="gallery-img" />
+          <img src="(1).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(2).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(3).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(4).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(5).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(6).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(7).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(8).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(9).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(10).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(11).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(12).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
+          <img src="(13).jpg" alt="Grad portrait in the redwoods" className="gallery-img" />
         </div>
       </section>
 
