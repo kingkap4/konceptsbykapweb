@@ -97,9 +97,8 @@ function App() {
       <footer className="footer">
         <h2>Connect With Me</h2>
         <div className="social-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="mailto:your-email@example.com">Email</a>
+          <a href="https://www.instagram.com/konceptsbykap/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="mailto:ksharm33@ucsc.edu">Email</a>
         </div>
         <p>&copy; {new Date().getFullYear()} KonceptsbyKap. All rights reserved.</p>
       </footer>
