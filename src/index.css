@@ -8,9 +8,9 @@
 }
 
 body {
-  color: #333;
+  background-color: #0b0c10; 
+  color: #e0e2e4;
   line-height: 1.6;
-  background-color: #fff;
 }
 
 .app-container {
@@ -19,153 +19,151 @@ body {
 
 .section {
   padding: 60px 20px;
-  max-width: 1200px;
+  max-width: 1100px; 
   margin: 0 auto;
   text-align: center;
-}
-
-.bg-light {
-  background-color: #f8f9fa;
 }
 
 h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
-  color: #111;
+  color: #d4af37; /* Starlight gold */
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Header */
-.header {
-  background-color: #111;
-  color: #fff;
-  padding: 80px 20px;
+/* --- Header Theme: Stars & Redwoods --- */
+.theme-header {
+  position: relative;
+  background-color: #0d2217; 
+  background-image: linear-gradient(to bottom, #020205 0%, #0b1320 40%, #0d2217 100%);
+  padding: 100px 20px;
   text-align: center;
+  border-bottom: 2px solid #d4af37;
+  overflow: hidden; 
+}
+
+.theme-header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1; 
 }
 
 .header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 10px;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #a8b0b5;
+  margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
 .nav-links {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-links a {
-  color: #ccc;
+  color: #e0e2e4;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: #d4af37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
-/* Gallery Grid (Mobile First) */
-.gallery-grid {
+/* --- Small Portfolio Gallery Layout --- */
+.portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* This locks the gallery to be narrow, stopping images from getting huge */
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+.landscape-container {
+  width: 100%;
+}
+
+.landscape-img {
+  width: 100%;
+  height: 350px; /* Fixed smaller height */
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* 3x4 Portrait Grid */
+.portrait-grid {
   display: grid;
-  grid-template-columns: 1fr; /* 1 column on mobile */
+  /* Forces exactly 3 columns on standard screens */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 15px;
 }
 
-.gallery-img {
+.portrait-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  height: 250px; /* Fixed height like your very first iteration */
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.gallery-img:hover {
-  transform: scale(1.02);
+.portrait-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
 }
 
-/* Rates Container (Mobile First) */
+/* Make it 2 columns only on very small phone screens to prevent squishing */
+@media (max-width: 600px) {
+  .portrait-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portrait-img {
+    height: 200px; 
+  }
+}
+
+/* --- Rates Section --- */
+.bg-dark-green {
+  background-color: #0b1710;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
 .rates-container {
   display: flex;
-  flex-direction: column; /* Stack vertically on mobile */
+  flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-.rate-card {
-  background: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 12px;
-  padding: 30px;
-  width: 100%;
-  max-width: 350px;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-}
-
-.rate-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #111;
-}
-
-.rate-card ul {
-  list-style: none;
-}
-
-.rate-card li {
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-}
-
-/* Booking */
-.booking-subtext {
-  margin-bottom: 30px;
-  color: #555;
-}
-
-.calendar-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-/* Footer */
-.footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.social-links {
-  margin-bottom: 20px;
-}
-
-.social-links a {
-  color: #ccc;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #fff;
-}
-
-/* Laptop/Desktop Optimizations */
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cols on tablets */
-  }
-  
+@media (min-width: 900px) {
   .rates-container {
     flex-direction: row;
     justify-content: center;
@@ -173,8 +171,80 @@ h2 {
   }
 }
 
-@media (min-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 cols on laptops */
-  }
+.rate-card {
+  background: #111a14;
+  border: 1px solid #1f2e24;
+  border-top: 3px solid #d4af37;
+  border-radius: 8px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-5px);
+}
+
+.rate-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.rate-card ul {
+  list-style: none;
+}
+
+.rate-card li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #c5cacc;
+}
+
+.rate-card strong {
+  color: #d4af37;
+}
+
+/* --- Booking & Footer --- */
+.booking-subtext {
+  color: #a8b0b5;
+  margin-bottom: 30px;
+}
+
+.calendar-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  background: #fff;
+}
+
+.footer {
+  background-color: #030305;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #1a1a24;
+}
+
+.social-links {
+  margin-bottom: 25px;
+}
+
+.social-links a {
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
 }
