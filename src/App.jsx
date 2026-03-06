@@ -24,12 +24,12 @@ function App() {
           
           {/* Top Landscape Photo */}
           <div className="landscape-container">
-            <img src="(1).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
+            <img src="(2).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
           </div>
 
           {/* 3x4 Portrait Grid */}
           <div className="portrait-grid">
-            <img src="(2).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="(1).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
             <img src="(3).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
             <img src="(4).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
             <img src="(5).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
