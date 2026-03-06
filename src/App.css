@@ -8,7 +8,6 @@
 }
 
 body {
-  /* Dark space background */
   background-color: #0b0c10; 
   color: #e0e2e4;
   line-height: 1.6;
@@ -19,57 +18,59 @@ body {
 }
 
 .section {
-  padding: 80px 20px;
-  max-width: 1200px;
+  padding: 60px 20px;
+  max-width: 1100px; /* Slightly narrower to keep photos compact */
   margin: 0 auto;
   text-align: center;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  /* Starlight gold color */
-  color: #d4af37; 
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #d4af37; /* Starlight gold */
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-/* --- Header Theme: Stars & Redwoods --- */
+/* --- Fixed Header Theme: Stars & Redwoods --- */
 .theme-header {
   position: relative;
-  /* Gradient: Night sky fading into deep redwood canopy */
-  background: linear-gradient(180deg, #050510 0%, #0b1320 50%, #0d2217 100%);
-  padding: 120px 20px;
+  /* Bulletproof gradient syntax */
+  background-color: #0d2217; /* Fallback color */
+  background-image: linear-gradient(to bottom, #020205 0%, #0b1320 40%, #0d2217 100%);
+  padding: 100px 20px;
   text-align: center;
   border-bottom: 2px solid #d4af37;
+  overflow: hidden; /* Keeps the stars inside the header */
 }
 
-/* Optional CSS 'stars' effect using a subtle background pattern */
+/* Star pattern overlay */
 .theme-header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.1;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
   pointer-events: none;
+  z-index: 0;
 }
 
 .header-content {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Ensures text sits on top of the stars */
 }
 
 .header h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 10px;
   color: #ffffff;
   letter-spacing: 3px;
-  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #a8b0b5;
   margin-bottom: 30px;
   letter-spacing: 1px;
@@ -85,7 +86,7 @@ h2 {
 .nav-links a {
   color: #e0e2e4;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -96,14 +97,14 @@ h2 {
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
-/* --- Portfolio Gallery Layout --- */
+/* --- Compact Portfolio Gallery Layout --- */
 .portfolio-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
-/* Landscape Hero Image */
+/* Landscape Hero Image (Size Restricted) */
 .landscape-container {
   width: 100%;
 }
@@ -111,17 +112,17 @@ h2 {
 .landscape-img {
   width: 100%;
   height: auto;
-  max-height: 600px;
+  max-height: 400px; /* Prevents the image from becoming a massive wall */
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
-/* 3x4 Portrait Grid */
+/* Smaller Portrait Grid */
 .portrait-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile: 1 column */
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Mobile: 2 columns to keep them small */
+  gap: 15px;
 }
 
 .portrait-img {
@@ -129,32 +130,33 @@ h2 {
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 4px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .portrait-img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
 }
 
-/* Desktop & Laptop Media Queries for Grid */
+/* Tablet Layout */
 @media (min-width: 768px) {
   .portrait-grid {
-    grid-template-columns: repeat(2, 1fr); /* Tablets: 2 columns */
+    grid-template-columns: repeat(3, 1fr); /* Tablets: 3 smaller columns */
   }
 }
 
+/* Laptop Layout */
 @media (min-width: 1024px) {
   .portrait-grid {
-    grid-template-columns: repeat(3, 1fr); /* Laptops: 3 columns */
+    grid-template-columns: repeat(4, 1fr); /* Laptops: 4 compact columns (creates 3 neat rows) */
   }
 }
 
 /* --- Rates Section --- */
 .bg-dark-green {
-  background-color: #0b1710; /* Very deep redwood shadow */
+  background-color: #0b1710;
   border-top: 1px solid rgba(255,255,255,0.05);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -166,7 +168,7 @@ h2 {
   gap: 30px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .rates-container {
     flex-direction: row;
     justify-content: center;
@@ -175,15 +177,15 @@ h2 {
 }
 
 .rate-card {
-  background: #111a14; /* Slightly lighter forest green for contrast */
+  background: #111a14;
   border: 1px solid #1f2e24;
-  border-top: 3px solid #d4af37; /* Gold starlight accent */
+  border-top: 3px solid #d4af37;
   border-radius: 8px;
-  padding: 40px 30px;
+  padding: 30px 25px;
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   text-align: left;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
 }
 
@@ -192,8 +194,8 @@ h2 {
 }
 
 .rate-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
   color: #ffffff;
 }
 
@@ -202,40 +204,39 @@ h2 {
 }
 
 .rate-card li {
-  margin-bottom: 15px;
-  font-size: 1rem;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
   color: #c5cacc;
 }
 
 .rate-card strong {
   color: #d4af37;
-  font-size: 1.1rem;
 }
 
 /* --- Booking & Footer --- */
 .booking-subtext {
   color: #a8b0b5;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .calendar-wrapper {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  background: #fff; /* Kept white so the Google iframe doesn't clash */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  background: #fff;
 }
 
 .footer {
-  background-color: #050508; /* Deepest space black */
+  background-color: #030305;
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
   border-top: 1px solid #1a1a24;
 }
 
 .social-links {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .social-links a {
@@ -243,7 +244,7 @@ h2 {
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s ease;
