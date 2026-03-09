@@ -28,28 +28,28 @@ function App() {
           {/* Top Landscape Photo */}
           <div className="landscape-container">
             <img 
-              src="/(1).jpg" 
+              src="-- (13).jpg" 
               alt="Featured landscape grad portrait" 
               className="gallery-img landscape-img lightbox-trigger"
-              onClick={() => setSelectedImg("/(1).jpg")} 
+              onClick={() => setSelectedImg("-- (13).jpg")} 
             />
           </div>
 
           {/* 3x4 Portrait Grid */}
           <div className="portrait-grid">
             {/* Notice the onClick added to every image */}
-            <img src="/(2).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(2).jpg")} />
-            <img src="/(3).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(3).jpg")} />
-            <img src="/(4).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(4).jpg")} />
-            <img src="/(5).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(5).jpg")} />
-            <img src="/(6).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(6).jpg")} />
-            <img src="/(7).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(7).jpg")} />
-            <img src="/(8).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(8).jpg")} />
-            <img src="/(9).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(9).jpg")} />
-            <img src="/(10).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(10).jpg")} />
-            <img src="/(11).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(11).jpg")} />
-            <img src="/(12).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(12).jpg")} />
-            <img src="/(13).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(13).jpg")} />
+            <img src="-- (10).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (10).jpg")} />
+            <img src="-- (12).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (12).jpg")} />
+            <img src="-- (7).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (7).jpg")} />
+            <img src="-- (1).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (1).jpg")} />
+            <img src="-- (8).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (8).jpg")} />
+            <img src="-- (9).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (9).jpg")} />
+            <img src="-- (11).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (11).jpg")} />
+            <img src="-- (2).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (2).jpg")} />
+            <img src="-- (4).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (4).jpg")} />
+            <img src="-- (5).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (5).jpg")} />
+            <img src="-- (6).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (6).jpg")} />
+            <img src="-- (3).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("-- (3).jpg")} />
           </div>
 
         </div>
