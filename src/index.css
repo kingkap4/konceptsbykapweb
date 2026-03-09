@@ -259,3 +259,58 @@ h2 {
 .social-links a:hover {
   color: #ffffff;
 }
+
+/* --- Lightbox Styles --- */
+.lightbox-trigger {
+  cursor: zoom-in; /* Changes the mouse to a magnifying glass on hover */
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.92); /* Deep semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Makes sure it sits on top of everything else */
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.lightbox-active-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+  color: #d4af37; /* Gold accent on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
