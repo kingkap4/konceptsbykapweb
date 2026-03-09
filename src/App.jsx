@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 
 function App() {
+  // This state keeps track of which image is currently clicked/enlarged
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <div className="app-container">
       {/* Header Section */}
@@ -24,34 +27,38 @@ function App() {
           
           {/* Top Landscape Photo */}
           <div className="landscape-container">
-            <img src="- (13).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
+            <img 
+              src="/(1).jpg" 
+              alt="Featured landscape grad portrait" 
+              className="gallery-img landscape-img lightbox-trigger"
+              onClick={() => setSelectedImg("/(1).jpg")} 
+            />
           </div>
 
           {/* 3x4 Portrait Grid */}
           <div className="portrait-grid">
-            <img src="- (7).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (12).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (10).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (1).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (5).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (8).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (11).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (2).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (9).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (3).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (4).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="- (6).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            {/* Notice the onClick added to every image */}
+            <img src="/(2).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(2).jpg")} />
+            <img src="/(3).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(3).jpg")} />
+            <img src="/(4).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(4).jpg")} />
+            <img src="/(5).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(5).jpg")} />
+            <img src="/(6).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(6).jpg")} />
+            <img src="/(7).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(7).jpg")} />
+            <img src="/(8).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(8).jpg")} />
+            <img src="/(9).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(9).jpg")} />
+            <img src="/(10).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(10).jpg")} />
+            <img src="/(11).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(11).jpg")} />
+            <img src="/(12).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(12).jpg")} />
+            <img src="/(13).jpg" alt="Grad portrait" className="gallery-img portrait-img lightbox-trigger" onClick={() => setSelectedImg("/(13).jpg")} />
           </div>
 
         </div>
       </section>
 
-      {/* Rates Section */}
+      {/* Rates Section (Unchanged) */}
       <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
         <div className="rates-container">
-          
-          {/* Digital */}
           <div className="rate-card">
             <h3>Digital</h3>
             <ul>
@@ -61,8 +68,6 @@ function App() {
               <li>Includes brightness, skin touch-ups, color grading, etc.</li>
             </ul>
           </div>
-
-          {/* Film */}
           <div className="rate-card">
             <h3>Film</h3>
             <ul>
@@ -73,8 +78,6 @@ function App() {
               <li>Black & white and color options available.</li>
             </ul>
           </div>
-
-          {/* Couples */}
           <div className="rate-card">
             <h3>Couples</h3>
             <ul>
@@ -85,11 +88,10 @@ function App() {
               <li>Includes brightness, skin touch-ups, color grading, etc.</li>
             </ul>
           </div>
-
         </div>
       </section>
 
-      {/* Booking Section */}
+      {/* Booking Section (Unchanged) */}
       <section id="booking" className="section">
         <h2>Book Your Session</h2>
         <p className="booking-subtext">Select a time that works for you using the calendar below.</p>
@@ -103,7 +105,7 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer (Unchanged) */}
       <footer className="footer">
         <h2>Connect With Me</h2>
         <div className="social-links">
@@ -112,6 +114,16 @@ function App() {
         </div>
         <p>&copy; {new Date().getFullYear()} KonceptsbyKap. All rights reserved.</p>
       </footer>
+
+      {/* --- Lightbox Overlay --- */}
+      {/* If an image is selected, this black screen covers the site */}
+      {selectedImg && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImg(null)}>
+          <span className="close-lightbox">&times;</span>
+          <img src={selectedImg} alt="Enlarged view" className="lightbox-active-img" />
+        </div>
+      )}
+
     </div>
   );
 }
