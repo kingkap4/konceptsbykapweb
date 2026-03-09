@@ -24,23 +24,23 @@ function App() {
           
           {/* Top Landscape Photo */}
           <div className="landscape-container">
-            <img src="-(13).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
+            <img src="- (13).jpg" alt="Featured landscape grad portrait" className="gallery-img landscape-img" />
           </div>
 
           {/* 3x4 Portrait Grid */}
           <div className="portrait-grid">
-            <img src="-(7).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(12).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(10).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(1).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(5).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(8).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(11).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(2).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(9).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(3).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(4).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
-            <img src="-(6).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (7).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (12).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (10).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (1).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (5).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (8).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (11).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (2).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (9).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (3).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (4).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
+            <img src="- (6).jpg" alt="Grad portrait" className="gallery-img portrait-img" />
           </div>
 
         </div>
