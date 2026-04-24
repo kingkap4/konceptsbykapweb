@@ -313,4 +313,72 @@ h2 {
 @keyframes scaleUp {
   from { transform: scale(0.95); }
   to { transform: scale(1); }
+  /* --- Mobile Booking Enhancements --- */
+.calendar-actions {
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #d4af37; /* Starlight Gold */
+  color: #0b0c10;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fce277;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.calendar-wrapper {
+  /* Enables native-feeling smooth scroll inside the iframe on iOS */
+  -webkit-overflow-scrolling: touch; 
+}
+
+/* --- Mobile Lightbox Fixes --- */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* dvh (Dynamic Viewport Height) prevents the IG/Safari bottom toolbars from cutting off the image */
+  height: 100dvh; 
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.lightbox-active-img {
+  max-width: 95vw;
+  max-height: 85dvh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+.close-lightbox {
+  position: absolute;
+  /* env() functions ensure the close button isn't hidden under an iPhone notch */
+  top: max(20px, env(safe-area-inset-top));
+  right: max(30px, env(safe-area-inset-right));
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
 }
