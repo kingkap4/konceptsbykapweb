@@ -58,6 +58,7 @@ h2 {
   position: relative;
   z-index: 1; 
 }
+
 .header h1 {
   /* Smaller font size for mobile screens */
   font-size: 2.5rem; 
@@ -110,7 +111,6 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* This locks the gallery to be narrow, stopping images from getting huge */
   max-width: 800px; 
   margin: 0 auto;
 }
@@ -121,7 +121,7 @@ h2 {
 
 .landscape-img {
   width: 100%;
-  height: 350px; /* Fixed smaller height */
+  height: 350px; 
   object-fit: cover;
   border-radius: 6px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
@@ -130,14 +130,13 @@ h2 {
 /* 3x4 Portrait Grid */
 .portrait-grid {
   display: grid;
-  /* Forces exactly 3 columns on standard screens */
   grid-template-columns: repeat(3, 1fr); 
   gap: 15px;
 }
 
 .portrait-img {
   width: 100%;
-  height: 250px; /* Fixed height like your very first iteration */
+  height: 250px; 
   object-fit: cover;
   border-radius: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -175,210 +174,4 @@ h2 {
 }
 
 @media (min-width: 900px) {
-  .rates-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-  }
-}
-
-.rate-card {
-  background: #111a14;
-  border: 1px solid #1f2e24;
-  border-top: 3px solid #d4af37;
-  border-radius: 8px;
-  padding: 30px 25px;
-  width: 100%;
-  max-width: 320px;
-  text-align: left;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
-}
-
-.rate-card:hover {
-  transform: translateY(-5px);
-}
-
-.rate-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.rate-card ul {
-  list-style: none;
-}
-
-.rate-card li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: #c5cacc;
-}
-
-.rate-card strong {
-  color: #d4af37;
-}
-
-/* --- Booking & Footer --- */
-.booking-subtext {
-  color: #a8b0b5;
-  margin-bottom: 30px;
-}
-
-.calendar-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  background: #fff;
-}
-
-.footer {
-  background-color: #030305;
-  text-align: center;
-  padding: 50px 20px;
-  border-top: 1px solid #1a1a24;
-}
-
-.social-links {
-  margin-bottom: 25px;
-}
-
-.social-links a {
-  color: #d4af37;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #ffffff;
-}
-
-/* --- Lightbox Styles --- */
-.lightbox-trigger {
-  cursor: zoom-in; /* Changes the mouse to a magnifying glass on hover */
-}
-
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.92); /* Deep semi-transparent black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Makes sure it sits on top of everything else */
-  cursor: zoom-out;
-  animation: fadeIn 0.2s ease-out forwards;
-}
-
-.lightbox-active-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-  animation: scaleUp 0.3s ease-out forwards;
-}
-
-.close-lightbox {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 50px;
-  font-weight: 300;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close-lightbox:hover {
-  color: #d4af37; /* Gold accent on hover */
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleUp {
-  from { transform: scale(0.95); }
-  to { transform: scale(1); }
-  /* --- Mobile Booking Enhancements --- */
-.calendar-actions {
-  margin-bottom: 25px;
-}
-
-.btn-primary {
-  display: inline-block;
-  background-color: #d4af37; /* Starlight Gold */
-  color: #0b0c10;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #fce277;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-}
-
-.calendar-wrapper {
-  /* Enables native-feeling smooth scroll inside the iframe on iOS */
-  -webkit-overflow-scrolling: touch; 
-}
-
-/* --- Mobile Lightbox Fixes --- */
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  /* dvh (Dynamic Viewport Height) prevents the IG/Safari bottom toolbars from cutting off the image */
-  height: 100dvh; 
-  background-color: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  cursor: zoom-out;
-  animation: fadeIn 0.2s ease-out forwards;
-}
-
-.lightbox-active-img {
-  max-width: 95vw;
-  max-height: 85dvh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-  animation: scaleUp 0.3s ease-out forwards;
-}
-
-.close-lightbox {
-  position: absolute;
-  /* env() functions ensure the close button isn't hidden under an iPhone notch */
-  top: max(20px, env(safe-area-inset-top));
-  right: max(30px, env(safe-area-inset-right));
-  color: #fff;
-  font-size: 50px;
-  font-weight: 300;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  z-index: 10000;
-}
-}
+  .rates-container
