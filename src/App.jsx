@@ -91,16 +91,32 @@ function App() {
         </div>
       </section>
 
-      {/* Booking Section (Unchanged) */}
+      {/* Booking Section */}
       <section id="booking" className="section">
         <h2>Book Your Session</h2>
-        <p className="booking-subtext">Select a time that works for you using the calendar below.</p>
+        <p className="booking-subtext">
+          Select a time that works for you below. If you are browsing on Instagram or Safari, tap the button to open the calendar directly.
+        </p>
+        
+        {/* Safari/Instagram Fallback Button */}
+        <div className="calendar-actions">
+          <a 
+            href="https://calendar.app.google/cvXaoUUqs6N3TnUf7" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-primary"
+          >
+            Open Booking Calendar
+          </a>
+        </div>
+
+        {/* The Google Calendar Iframe */}
         <div className="calendar-wrapper">
           <iframe 
             src="https://calendar.app.google/cvXaoUUqs6N3TnUf7" 
             title="Google Calendar Appointment Scheduling"
             style={{ border: 0, width: '100%', height: '600px' }} 
-            scrolling="no"
+            scrolling="yes" 
           ></iframe>
         </div>
       </section>
