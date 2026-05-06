@@ -174,4 +174,186 @@ h2 {
 }
 
 @media (min-width: 900px) {
-  .rates-container
+  .rates-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+.rate-card {
+  background: #111a14;
+  border: 1px solid #1f2e24;
+  border-top: 3px solid #d4af37;
+  border-radius: 8px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-5px);
+}
+
+.rate-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.rate-card ul {
+  list-style: none;
+}
+
+.rate-card li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #c5cacc;
+}
+
+.rate-card strong {
+  color: #d4af37;
+}
+
+/* --- Booking --- */
+.booking-subtext {
+  color: #a8b0b5;
+  margin-bottom: 30px;
+}
+
+.calendar-actions {
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #0b0c10;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fce277;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.calendar-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  background: #fff;
+  -webkit-overflow-scrolling: touch; 
+}
+
+
+/* --- Bulletproof Footer Styles --- */
+footer.footer {
+  background-color: #030305;
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid #1a1a24;
+  display: block; 
+}
+
+/* Forces the text to shrink down from the massive global h2 size */
+footer.footer h2 {
+  font-size: 1.8rem !important; 
+  margin-bottom: 25px !important;
+  color: #d4af37 !important; 
+  letter-spacing: 2px;
+}
+
+.social-links {
+  margin-bottom: 30px;
+}
+
+/* Forces the links to space out and use the gold theme color instead of blue */
+.social-links a {
+  color: #d4af37 !important; 
+  text-decoration: none !important;
+  margin: 0 20px !important; 
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  display: inline-block; 
+}
+
+.social-links a:hover {
+  color: #ffffff !important;
+}
+
+footer.footer p {
+  color: #889296;
+  font-size: 0.95rem;
+}
+
+/* --- Lightbox Styles --- */
+.lightbox-trigger {
+  cursor: zoom-in; 
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh; 
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.lightbox-active-img {
+  max-width: 95vw;
+  max-height: 85dvh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: max(20px, env(safe-area-inset-top));
+  right: max(30px, env(safe-area-inset-right));
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
+
+.close-lightbox:hover {
+  color: #d4af37; 
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
