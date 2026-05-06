@@ -91,11 +91,11 @@ function App() {
         </div>
       </section>
 
-      {/* Booking Section */}
+{/* Booking Section */}
       <section id="booking" className="section">
         <h2>Book Your Session</h2>
         <p className="booking-subtext">
-          Select a time that works for you below. If you are browsing on Instagram or Safari, tap the button to open the calendar directly.
+          Select a time that works for you below. If the calendar doesn't load or you cannot book on the website, please click the link below to view the calendar directly.
         </p>
         
         {/* Safari/Instagram Fallback Button */}
@@ -106,7 +106,7 @@ function App() {
             rel="noopener noreferrer" 
             className="btn-primary"
           >
-            Open Booking Calendar
+            Click here to see calendar
           </a>
         </div>
 
