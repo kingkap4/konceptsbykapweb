@@ -61,7 +61,7 @@ function App() {
         
         {/* NEW DISCLAIMER ADDED HERE */}
         <p className="rates-disclaimer">
-          Please message if you would like to negotiate rates.
+          Please reach out if you would like to negotiate rates.
         </p>
         <div className="rates-container">
           <div className="rate-card">
