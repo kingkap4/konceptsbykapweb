@@ -228,21 +228,36 @@ h2 {
   background: #fff;
 }
 
+/* --- Footer Fixes --- */
 .footer {
   background-color: #030305;
   text-align: center;
   padding: 50px 20px;
   border-top: 1px solid #1a1a24;
+  /* Centers everything properly */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* Shrinks "Connect With Me" so it isn't massive */
+.footer h2 {
+  font-size: 1.8rem; 
+  margin-bottom: 20px;
+  color: #d4af37;
 }
 
 .social-links {
+  /* This forces the links to sit side-by-side with a gap */
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
   margin-bottom: 25px;
 }
 
 .social-links a {
   color: #d4af37;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: bold;
   font-size: 1.1rem;
   text-transform: uppercase;
