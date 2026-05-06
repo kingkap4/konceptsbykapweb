@@ -161,6 +161,15 @@ h2 {
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* NEW DISCLAIMER STYLING */
+.rates-disclaimer {
+  color: #a8b0b5;
+  margin-top: -20px; /* Pulls it up slightly closer to the header */
+  margin-bottom: 40px;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
 .rates-container {
   display: flex;
   flex-direction: column;
