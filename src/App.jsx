@@ -55,9 +55,14 @@ function App() {
         </div>
       </section>
 
-      {/* Rates Section (Unchanged) */}
+      {/* --- Rates Section --- */}
       <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
+        
+        {/* NEW DISCLAIMER ADDED HERE */}
+        <p className="rates-disclaimer">
+          Please message if you would like to negotiate rates.
+        </p>
         <div className="rates-container">
           <div className="rate-card">
             <h3>Digital</h3>
