@@ -10,7 +10,7 @@ const BOOKING_EMBED_URL = `${BOOKING_URL}?gv=true`;
 
 // --- EARLY BOOKING DEAL ---
 // Applies to Digital, Film, Digital + Film Combo, and Couples.
-const EARLY_DEAL = 'Deal: 15% off sessions scheduled before May 1, 2027.';
+const EARLY_DEAL = 'Deal: 15% off the hourly rate for sessions scheduled before May 1, 2027.';
 
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
@@ -152,7 +152,7 @@ function App() {
       <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
         <p className="rates-deal">
-          Deal: 15% off Digital, Film, Digital + Film Combo, and Couples sessions scheduled before May 1, 2027.
+          Deal: 15% off the hourly rate for Digital, Film, Digital + Film Combo, and Couples sessions scheduled before May 1, 2027.
         </p>
         <p className="rates-disclaimer">
           Please message if you would like to negotiate rates. Click any package to view details and book.
