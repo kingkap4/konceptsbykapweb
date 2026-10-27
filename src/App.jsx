@@ -124,6 +124,7 @@ function App() {
                 key={n}
                 src={`/-- (${n}).jpg`}
                 alt="Grad portrait"
+                loading="lazy"
                 className="gallery-img portrait-img lightbox-trigger"
                 onClick={() => setSelectedImg(`/-- (${n}).jpg`)}
               />
