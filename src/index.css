@@ -165,10 +165,11 @@ h2 {
 }
 
 .rates-deal {
-  color: #d4af37;
+  color: #f0cc55;
   font-weight: bold;
   font-size: 1.05rem;
   margin-bottom: 10px;
+  animation: deal-text-glow 2.5s ease-in-out infinite;
 }
 
 .rates-disclaimer {
@@ -445,4 +446,87 @@ h2 {
 .modal-btn {
   width: 100%;
   text-align: center;
+}
+
+/* --- Deal Banner (top of page) --- */
+.deal-banner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 14px;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #17120a 0%, #2a2109 50%, #17120a 100%);
+  border-bottom: 1px solid #d4af37;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  animation: deal-banner-glow 2.5s ease-in-out infinite;
+}
+
+/* Light sweep that passes across the banner */
+.deal-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 236, 170, 0.22), transparent);
+  pointer-events: none;
+  animation: deal-shimmer 4s ease-in-out infinite;
+}
+
+.deal-banner-text {
+  color: #f0cc55;
+  font-weight: bold;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  animation: deal-text-glow 2.5s ease-in-out infinite;
+}
+
+.deal-banner-cta {
+  color: #0b0c10;
+  background: #d4af37;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.deal-banner:hover .deal-banner-cta {
+  background: #f0cc55;
+}
+
+@keyframes deal-banner-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(212, 175, 55, 0.25); }
+  50% { box-shadow: 0 0 24px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes deal-text-glow {
+  0%, 100% { text-shadow: 0 0 4px rgba(240, 204, 85, 0.35); }
+  50% { text-shadow: 0 0 14px rgba(240, 204, 85, 0.9); }
+}
+
+@keyframes deal-shimmer {
+  0% { left: -40%; }
+  60%, 100% { left: 110%; }
+}
+
+/* Visitors who turn off animations in their device settings get a static glow */
+@media (prefers-reduced-motion: reduce) {
+  .deal-banner,
+  .deal-banner::after,
+  .deal-banner-text,
+  .rates-deal {
+    animation: none;
+  }
+  .deal-banner { box-shadow: 0 0 16px rgba(212, 175, 55, 0.4); }
+  .deal-banner::after { display: none; }
 }
