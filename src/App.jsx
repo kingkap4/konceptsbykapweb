@@ -13,7 +13,7 @@ const BOOKING_EMBED_URL = `${BOOKING_URL}?gv=true`;
 const EARLY_DEAL = 'Deal: 15% off the hourly rate for sessions scheduled before May 1, 2027.';
 // Shown in the banner at the top of the page and at the top of the Rates section.
 const EARLY_DEAL_SUMMARY =
-  'Deal: 15% off the hourly rate for Digital, Film, Digital + Film Combo, and Couples sessions scheduled before May 1, 2027.';
+  'Deal: 15% off the hourly rate on grad photo packages for sessions scheduled before May 1, 2027.';
 
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
