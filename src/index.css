@@ -164,6 +164,13 @@ h2 {
   padding-right: 20px;
 }
 
+.rates-deal {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
 .rates-disclaimer {
   color: #a8b0b5;
   margin-bottom: 30px;

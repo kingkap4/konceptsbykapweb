@@ -8,67 +8,75 @@ const BOOKING_URL =
   'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AFnoKFFXltqJI6geQe4fLeUcKnT0Teo8uRgG8W-j7LLnm44njqoPv0S92KCQlFtGz0y1j1yRU';
 const BOOKING_EMBED_URL = `${BOOKING_URL}?gv=true`;
 
+// --- EARLY BOOKING DEAL ---
+// Applies to Digital, Film, Digital + Film Combo, and Couples.
+const EARLY_DEAL = 'Deal: 15% off the hourly rate for sessions scheduled before May 1, 2027.';
+
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
   {
     id: 'digital',
     title: 'Digital',
-    shortPrice: '$50/hr',
-    shortDesc: '$15 per 5 edited photos',
+    shortPrice: '$60/hr',
+    shortDesc: '$25 per 5 edited photos',
     details: [
       'Unlimited poses & locations (travel time counts towards hourly rate).',
-      '$50/hr of shooting.',
-      '$15 per 5 edited shots.',
+      '$60/hr of shooting.',
+      '$25 per 5 edited shots.',
       'Includes brightness, skin touch-ups, color grading, etc.',
       'Optional digicam lens available for +$5/hr.',
-      'Raw photos are not available.'
+      'Raw photos are not available.',
+      EARLY_DEAL
     ]
   },
   {
     id: 'film',
     title: 'Film',
-    shortPrice: '$50/hr',
+    shortPrice: '$60/hr',
     shortDesc: 'Scans & physical strips included.',
     details: [
-      '$50/hr of shooting (travel time counts towards hourly rate).',
+      '$60/hr of shooting (travel time counts towards hourly rate).',
       '~$50 for the cost of film roll & development.',
       'Includes digital scans + physical film strips.',
       'Black & white and color options available.',
-      'Unlimited poses and locations.'
+      'Poses & locations are limited by the amount of film.',
+      EARLY_DEAL
     ]
   },
   {
     id: 'combo',
     title: 'Digital + Film Combo',
-    shortPrice: '$55/hr',
+    shortPrice: '$70/hr',
     shortDesc: 'The best of both worlds.',
     details: [
-      '$55/hr of shooting (travel time counts towards hourly rate).',
-      '$5 per edited digital photo.',
+      '$70/hr of shooting (travel time counts towards hourly rate).',
+      '$25 per 5 edited digital photos.',
       '+ Cost of film roll & development.',
-      'Includes all standard editing (brightness, skin touch-ups, color grading).'
+      'Includes all standard editing (brightness, skin touch-ups, color grading).',
+      EARLY_DEAL
     ]
   },
   {
     id: 'couples',
     title: 'Couples',
-    shortPrice: '$65/hr',
+    shortPrice: '$75/hr',
     shortDesc: 'Solo and duo shots included.',
     details: [
-      '$65/hr of shooting (travel time counts towards hourly rate).',
+      '$75/hr of shooting (travel time counts towards hourly rate).',
       'Includes both solo and duo shots in the same session.',
-      '$15 per 5 edited shots.',
+      '$30 per 5 edited shots.',
       'Unlimited poses and locations.',
-      'Includes brightness, skin touch-ups, color grading, etc.'
+      'Includes brightness, skin touch-ups, color grading, etc.',
+      EARLY_DEAL
     ]
   },
   {
     id: 'team',
     title: 'Team Photos',
-    shortPrice: '$65/hr',
+    shortPrice: '$70/hr',
     shortDesc: 'Perfect for clubs and organizations.',
     details: [
-      '$65/hr of shooting.',
+      '$70/hr of shooting.',
       '$25 per 5 edited photos.',
       'Includes individual portraits of all team members + group team photos.',
       'Includes brightness, skin touch-ups, color grading.'
@@ -77,12 +85,12 @@ const ratePackages = [
   {
     id: 'headshot',
     title: 'LinkedIn / Professional',
-    shortPrice: '$20 flat rate',
+    shortPrice: '$30 flat rate',
     shortDesc: 'Simple and quick headshots.',
     details: [
-      '$20 flat rate.',
+      '$30 flat rate.',
       '20-minute session at 1 location.',
-      '3 to 5 fully edited photos included.',
+      '3 to 5 fully edited photos included free.',
       'Includes brightness, skin touch-ups, color grading, etc.',
       'Optional: +$5 for lighting equipment usage (chosen location must accommodate this).'
     ]
@@ -143,6 +151,9 @@ function App() {
       {/* Rates */}
       <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
+        <p className="rates-deal">
+          Deal: 15% off the hourly rate for Digital, Film, Digital + Film Combo, and Couples sessions scheduled before May 1, 2027.
+        </p>
         <p className="rates-disclaimer">
           Please message if you would like to negotiate rates. Click any package to view details and book.
         </p>
