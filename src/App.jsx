@@ -8,6 +8,10 @@ const BOOKING_URL =
   'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AFnoKFFXltqJI6geQe4fLeUcKnT0Teo8uRgG8W-j7LLnm44njqoPv0S92KCQlFtGz0y1j1yRU';
 const BOOKING_EMBED_URL = `${BOOKING_URL}?gv=true`;
 
+// --- EARLY BOOKING DEAL ---
+// Applies to Digital, Film, Digital + Film Combo, and Couples.
+const EARLY_DEAL = 'Deal: 15% off sessions scheduled before May 1, 2027.';
+
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
   {
@@ -21,7 +25,8 @@ const ratePackages = [
       '$25 per 5 edited shots.',
       'Includes brightness, skin touch-ups, color grading, etc.',
       'Optional digicam lens available for +$5/hr.',
-      'Raw photos are not available.'
+      'Raw photos are not available.',
+      EARLY_DEAL
     ]
   },
   {
@@ -34,7 +39,8 @@ const ratePackages = [
       '~$50 for the cost of film roll & development.',
       'Includes digital scans + physical film strips.',
       'Black & white and color options available.',
-      'Poses & locations are limited by the amount of film.'
+      'Poses & locations are limited by the amount of film.',
+      EARLY_DEAL
     ]
   },
   {
@@ -46,7 +52,8 @@ const ratePackages = [
       '$70/hr of shooting (travel time counts towards hourly rate).',
       '$25 per 5 edited digital photos.',
       '+ Cost of film roll & development.',
-      'Includes all standard editing (brightness, skin touch-ups, color grading).'
+      'Includes all standard editing (brightness, skin touch-ups, color grading).',
+      EARLY_DEAL
     ]
   },
   {
@@ -59,7 +66,8 @@ const ratePackages = [
       'Includes both solo and duo shots in the same session.',
       '$30 per 5 edited shots.',
       'Unlimited poses and locations.',
-      'Includes brightness, skin touch-ups, color grading, etc.'
+      'Includes brightness, skin touch-ups, color grading, etc.',
+      EARLY_DEAL
     ]
   },
   {
@@ -143,6 +151,9 @@ function App() {
       {/* Rates */}
       <section id="rates" className="section bg-dark-green">
         <h2>Photography Rates</h2>
+        <p className="rates-deal">
+          Deal: 15% off Digital, Film, Digital + Film Combo, and Couples sessions scheduled before May 1, 2027.
+        </p>
         <p className="rates-disclaimer">
           Please message if you would like to negotiate rates. Click any package to view details and book.
         </p>
