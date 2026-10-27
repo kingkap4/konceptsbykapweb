@@ -60,7 +60,8 @@ h2 {
 }
 
 .header h1 {
-  font-size: 3.5rem;
+  /* Scales down with screen width so the title fits on phones; 3.5rem max on larger screens */
+  font-size: clamp(1.75rem, 9vw, 3.5rem);
   margin-bottom: 10px;
   color: #ffffff;
   letter-spacing: 3px;
