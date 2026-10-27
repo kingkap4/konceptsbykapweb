@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import './index.css';
 
+// --- BOOKING LINKS ---
+// Google Calendar appointment schedule. The "?gv=true" version is the embeddable one.
+const BOOKING_URL =
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AFnoKFFXltqJI6geQe4fLeUcKnT0Teo8uRgG8W-j7LLnm44njqoPv0S92KCQlFtGz0y1j1yRU';
+const BOOKING_EMBED_URL = `${BOOKING_URL}?gv=true`;
+
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
   {
@@ -191,7 +197,7 @@ function App() {
 
         <div className="calendar-actions">
           <a
-            href="https://calendar.app.google/cvXaoUUqs6N3TnUf7"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -202,7 +208,7 @@ function App() {
 
         <div className="calendar-wrapper">
           <iframe
-            src="https://calendar.app.google/cvXaoUUqs6N3TnUf7"
+            src={BOOKING_EMBED_URL}
             title="Google Calendar Appointment Scheduling"
             style={{ border: 0, width: '100%', height: '600px' }}
             scrolling="yes"
@@ -242,7 +248,7 @@ function App() {
             </ul>
             <div className="modal-actions">
               <a
-                href="https://calendar.app.google/cvXaoUUqs6N3TnUf7"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary modal-btn"
