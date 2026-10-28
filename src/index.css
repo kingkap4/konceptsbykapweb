@@ -124,6 +124,7 @@ h2 {
 }
 
 .portrait-img {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
@@ -356,6 +357,9 @@ h2 {
 }
 
 .lightbox-active-img {
+  display: block;
+  width: auto;
+  height: auto;
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
@@ -392,6 +396,10 @@ h2 {
   position: relative;
   cursor: default;
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  /* Scroll inside the popup if it's taller than the screen (short or landscape phones) */
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
 }
 
 .close-modal {
@@ -530,4 +538,128 @@ h2 {
   }
   .deal-banner { box-shadow: 0 0 16px rgba(212, 175, 55, 0.4); }
   .deal-banner::after { display: none; }
+}
+
+/* --- Phones (600px wide and narrower) ---
+   Everything above is the desktop/tablet design; these rules only apply on phones. */
+@media (max-width: 600px) {
+  /* Deal banner: smaller text so it takes up less of the first screen */
+  .deal-banner {
+    padding: 10px 16px;
+    gap: 6px 10px;
+  }
+  .deal-banner-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+  }
+  .deal-banner-cta {
+    font-size: 0.7rem;
+    padding: 2px 10px;
+  }
+
+  /* Header: less empty space so the photos start sooner */
+  .theme-header {
+    padding: 56px 16px 44px;
+  }
+  .header h1 {
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+  .nav-links {
+    gap: 10px 20px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  /* Sections and headings */
+  .section,
+  .bg-dark-green.section {
+    padding: 44px 16px;
+  }
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+  }
+
+  /* Portfolio: tighter gaps so the photos are bigger */
+  .portfolio-wrapper,
+  .portrait-grid {
+    gap: 8px;
+  }
+
+  /* Rates */
+  .rates-deal {
+    font-size: 0.95rem;
+  }
+  .rates-disclaimer {
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+  }
+  .rates-grid {
+    gap: 14px;
+  }
+  .rate-card {
+    padding: 22px 20px;
+  }
+
+  /* About */
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Booking */
+  .booking-subtext {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 16px;
+  }
+  .footer h2 {
+    font-size: 1.4rem;
+  }
+  .social-links {
+    gap: 24px;
+  }
+
+  /* Photo viewer and package popup */
+  .lightbox-overlay {
+    padding: 12px;
+  }
+  .close-lightbox {
+    top: 10px;
+    right: 16px;
+  }
+  .package-modal {
+    padding: 28px 20px 24px;
+  }
+  .modal-title {
+    font-size: 1.4rem;
+    padding-right: 28px;
+  }
+  .modal-price {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+  .modal-details li {
+    font-size: 0.9rem;
+    padding: 7px 0;
+  }
+}
+
+/* Touchscreens: don't leave cards and photos "lifted" after a tap */
+@media (hover: none) {
+  .rate-card:hover,
+  .portrait-img:hover,
+  .btn-primary:hover {
+    transform: none;
+  }
 }
