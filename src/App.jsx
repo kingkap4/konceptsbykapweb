@@ -15,6 +15,45 @@ const EARLY_DEAL = 'Deal: 15% off the hourly rate for sessions scheduled before 
 const EARLY_DEAL_SUMMARY =
   'Deal: 15% off the hourly rate on grad photo packages for sessions scheduled before May 1, 2027.';
 
+// --- PORTFOLIO PHOTOS ---
+// Each photo is public/-- (N).jpg, plus smaller WebP copies in public/photos/ made by
+// scripts/optimize_images.py. Browsers pick the smallest copy that looks sharp on their
+// screen; the JPEG is only used by browsers that can't show WebP.
+const HERO_PHOTO = 13;
+const GRID_PHOTOS = [10, 12, 7, 1, 8, 9, 11, 2, 4, 5, 6, 3];
+const PHOTO_WIDTHS = { portrait: [480, 720, 1000], landscape: [750, 1100, 1500] };
+
+// How wide each photo is drawn on screen, so the browser can choose a copy.
+const HERO_SIZES = '(min-width: 1100px) 1060px, calc(100vw - 32px)';
+const GRID_SIZES =
+  '(min-width: 1024px) 254px, (min-width: 768px) calc((100vw - 70px) / 3), calc((100vw - 40px) / 2)';
+const LIGHTBOX_SIZES = '90vw';
+
+function Photo({ n, sizes, alt, className, loading = 'lazy', fetchPriority, onClick }) {
+  const landscape = n === HERO_PHOTO;
+  const widths = landscape ? PHOTO_WIDTHS.landscape : PHOTO_WIDTHS.portrait;
+  return (
+    <picture>
+      <source
+        type="image/webp"
+        srcSet={widths.map((w) => `/photos/grad-${n}-${w}.webp ${w}w`).join(', ')}
+        sizes={sizes}
+      />
+      <img
+        src={`/-- (${n}).jpg`}
+        width={landscape ? 1500 : 1000}
+        height={landscape ? 1000 : 1500}
+        alt={alt}
+        className={className}
+        loading={loading}
+        fetchPriority={fetchPriority}
+        decoding="async"
+        onClick={onClick}
+      />
+    </picture>
+  );
+}
+
 // --- RATE PACKAGES DATA ---
 const ratePackages = [
   {
@@ -133,23 +172,26 @@ function App() {
         <div className="portfolio-wrapper">
 
           <div className="landscape-container">
-            <img
-              src="/-- (13).jpg"
+            <Photo
+              n={HERO_PHOTO}
+              sizes={HERO_SIZES}
               alt="Featured landscape grad portrait"
               className="gallery-img landscape-img lightbox-trigger"
-              onClick={() => setSelectedImg("/-- (13).jpg")}
+              loading="eager"
+              fetchPriority="high"
+              onClick={() => setSelectedImg(HERO_PHOTO)}
             />
           </div>
 
           <div className="portrait-grid">
-            {[10,12,7,1,8,9,11,2,4,5,6,3].map((n) => (
-              <img
+            {GRID_PHOTOS.map((n) => (
+              <Photo
                 key={n}
-                src={`/-- (${n}).jpg`}
+                n={n}
+                sizes={GRID_SIZES}
                 alt="Grad portrait"
-                loading="lazy"
                 className="gallery-img portrait-img lightbox-trigger"
-                onClick={() => setSelectedImg(`/-- (${n}).jpg`)}
+                onClick={() => setSelectedImg(n)}
               />
             ))}
           </div>
@@ -248,7 +290,13 @@ function App() {
       {selectedImg && (
         <div className="lightbox-overlay" onClick={() => setSelectedImg(null)}>
           <span className="close-lightbox">&times;</span>
-          <img src={selectedImg} alt="Enlarged view" className="lightbox-active-img" />
+          <Photo
+            n={selectedImg}
+            sizes={LIGHTBOX_SIZES}
+            alt="Enlarged view"
+            className="lightbox-active-img"
+            loading="eager"
+          />
         </div>
       )}
 
